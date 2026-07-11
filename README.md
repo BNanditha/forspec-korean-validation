@@ -1,11 +1,11 @@
 Overview
 
-This project independently validates the ForSpEC (Forensic Sperm Epigenetic Clock) model — developed by Pisarek-Pacek et al. (2026) — on a Korean sperm cell dataset (GSE280299), to assess whether a model trained on Polish/European samples generalises to an East Asian population.
+This project independently validates the ForSpEC (Forensic Sperm Epigenetic Clock) model - developed by Pisarek-Pacek et al. (2026) — on a Korean sperm cell dataset (GSE280299), to assess whether a model trained on Polish/European samples generalises to an East Asian population.
 ForSpEC predicts donor age from DNA methylation at just 7 CpG sites in sperm cells, using bisulfite amplicon sequencing with Ion AmpliSeq™ technology. It was originally validated on two American cohorts (GSE185445, N=376; GSE185920, N=1419), achieving MAE values of 4.33 and 5.00 years respectively.
 
 Dataset
 
-Source: NCBI GEO — GSE280299
+Source: NCBI GEO - GSE280299
 Population: Korean-Asian males
 Samples: 56 sperm cell samples
 Age range: 18–70 years
@@ -37,15 +37,15 @@ Interpretation
 
 ForSpEC shows dramatically reduced accuracy on the Korean cohort compared to American cohorts, with MAE increasing approximately 5-fold. The weak Pearson correlation (R = 0.313) and systematic underestimation across all age groups suggest the model does not generalise well to Korean sperm methylation patterns.
 Two factors likely contribute to this:
-1. Population-specific methylation differences — DNA methylation levels at the 7 ForSpEC CpGs appear to differ substantially between Polish/European and Korean populations. This is consistent with published findings showing that epigenetic age predictors trained on one population often perform poorly in others, and directly supports the cross-population validation concern raised by Pisarek-Pacek et al. in their discussion.
-2. Normalisation differences — ForSpEC was trained on ssNoob-normalised EPIC array data. The preprocessed file used here may apply a different normalisation pipeline, which could contribute to systematic prediction bias. Future work should apply ssNoob normalisation to the raw IDAT files for a fairer comparison.
+1. Population-specific methylation differences - DNA methylation levels at the 7 ForSpEC CpGs appear to differ substantially between Polish/European and Korean populations. This is consistent with published findings showing that epigenetic age predictors trained on one population often perform poorly in others, and directly supports the cross-population validation concern raised by Pisarek-Pacek et al. in their discussion.
+2. Normalisation differences - ForSpEC was trained on ssNoob-normalised EPIC array data. The preprocessed file used here may apply a different normalisation pipeline, which could contribute to systematic prediction bias. Future work should apply ssNoob normalisation to the raw IDAT files for a fairer comparison.
 These findings suggest that population-specific recalibration or retraining of ForSpEC on East Asian cohorts may be necessary before it can be applied in forensic casework involving Korean or broader Asian populations.
 
 Limitations
 
 Normalisation pipeline of the processed GEO file is unknown and may differ from ssNoob used in the original ForSpEC study
 N=56 is a relatively small validation cohort
-Raw IDAT files were not processed — future work should validate using ssNoob normalisation via the R minfi package for a direct comparison
+Raw IDAT files were not processed - future work should validate using ssNoob normalisation via the R minfi package for a direct comparison
 
 
 References
