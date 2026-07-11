@@ -42,6 +42,8 @@ ForSpEC predicts donor age from DNA methylation at just 7 CpG sites in sperm cel
 | Pearson R | 0.313 | 0.645 | 0.616 |
 | p-value | 0.019 | — | — |
 
+![ForSpEC Korean Validation](forspec_korean_validation.png)
+
 ## Interpretation
 
 ForSpEC shows dramatically reduced accuracy on the Korean cohort compared to American cohorts, with MAE increasing approximately 5-fold. The weak Pearson correlation (R = 0.313) and systematic underestimation across all age groups suggest the model does not generalise well to Korean sperm methylation patterns.
